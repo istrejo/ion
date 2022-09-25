@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" novalidate (ngSubmit)="register()">
+    <ion-list>
+      <ion-item>
+        <ion-label type="email" position="floating">
+          <ion-icon color="primary" name="mail"></ion-icon>
+          Email</ion-label
+        >
+        <ion-input formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon color="primary" name="lock-open"></ion-icon>
+          Password</ion-label
+        >
+        <ion-input [type]="passwordType" formControlName="password">
+        </ion-input>
+        <ion-icon
+          class="show-password"
+          slot="end"
+          [name]="eye"
+          (click)="togglePasswordMode()"
+        ></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon color="primary" name="lock-open"></ion-icon>
+          Confirm Password</ion-label
+        >
+        <ion-input [type]="passwordType" formControlName="confirmPassword">
+        </ion-input>
+        <ion-icon
+          class="show-password"
+          slot="end"
+          [name]="eye"
+          (click)="togglePasswordMode()"
+        ></ion-icon>
+      </ion-item>
+    </ion-list>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button
+          color="secondary"
+          [disabled]="form.invalid"
+          type="submit"
+          expand="block"
+        >
+          register
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button
+          routerLink="/login"
+          routerDirection="back"
+          color="primary"
+          expand="block"
+        >
+          Login
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
