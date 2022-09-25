@@ -1,0 +1,7 @@
+{
+  "name": "ionic-nicobytes-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
